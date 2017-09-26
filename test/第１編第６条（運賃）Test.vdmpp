@@ -1,0 +1,21 @@
+-- ‘æ‚P•Ò‘æ‚Uği‰^’ÀjƒNƒ‰ƒX‚ÌƒeƒXƒg’è‹`ƒNƒ‰ƒX
+class ‘æ‚P•Ò‘æ‚Uği‰^’ÀjTest
+
+
+operations
+
+public static execute : () ==> ()
+execute() == (
+    dcl suite : TestSuite := new TestSuite("‘æ‚P•Ò‘æ‚Uği‰^’Àj Test"),
+        result : TestResult := new TestResult();
+    
+    result.addListener(new MyPrintTestListener());
+
+    suite.addTest(new ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01("case01 - no problem"));
+  --suite.addTest(new ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT02("case02 - no problem"));
+
+    suite.run(result);
+);
+
+
+end ‘æ‚P•Ò‘æ‚Uği‰^’ÀjTest

@@ -20,8 +20,7 @@ instance variables
 operations
 -- TODO Define operations here
 	public pure get‰^’À : token * token ==> nat1
-	get‰^’À(aæŽÔ‰w, b~ŽÔ‰w) ==
-		 is not yet specified
+	get‰^’À(aæŽÔ‰w, b~ŽÔ‰w) == return 100;
 
 functions
 -- TODO Define functiones here

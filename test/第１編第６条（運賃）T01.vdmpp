@@ -1,0 +1,33 @@
+class ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01 is subclass of TestCase
+
+instance variables
+i‘æ‚P•Ò‘æ‚Uği‰^’Àj : ‘æ‚P•Ò‘æ‚Uği‰^’Àj := new ‘æ‚P•Ò‘æ‚Uği‰^’Àj();
+
+
+operations 
+public ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01 : () ==> ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01
+‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01() == TestCase("‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01");
+
+public ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01 : seq of char ==> ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01
+‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01(str) == TestCase(str);
+
+public setUp : () ==> ()
+setUp() == (
+  return;
+);
+
+public runTest : () ==> ()
+runTest() == 
+  (
+    dcl io : IO, fare : nat1;
+    io := new IO();
+    fare := i‘æ‚P•Ò‘æ‚Uği‰^’Àj.get‰^’À(mk_token("N01"),mk_token("N02"));
+    io.println(fare);
+  );
+
+public tearDown : () ==> ()
+tearDown() == 
+  skip;
+
+
+end ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01

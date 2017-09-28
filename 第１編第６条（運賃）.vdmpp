@@ -16,11 +16,54 @@ instance variables
 --	public i乗車駅 : set of メトロ;
 --	public i降車駅 : set of メトロ;
 --	public i相互発着 : set of メトロ
+-- 駅の組からの距離
+protected 相互発着写像　: map (token * token ) to nat1 := {|->};
+protected キロ程写像　: map (token * token ) to real := {|->};
+
 
 operations
--- TODO Define operations here
+
+
+	/*********************************************************************
+	 * Operation名　：　get運賃
+	 *　概要　　　　　　  ：　乗車駅（a乗車駅）と降車駅（b降車駅）を引数として運賃を返却する 
+	 *
+	 *　[規定]
+	 * ２　前項に定める普通旅客運賃のうち、大人片道普通旅客運賃は、旅客の乗車する発着区間
+	 *　　　キロ程により、次によって区分した１円単位運賃とする。
+	 *　　　　　１区 　１キロメートルから　　６キロメートルまで　　１６５円
+	 *　　　　　２区 　７キロメートルから　１１キロメートルまで　　１９５円
+	 *　　　　　３区 １２キロメートルから　１９キロメートルまで　　２３７円
+	 *　　　　　４区 ２０キロメートルから　２７キロメートルまで　　２７８円
+	 *　　　　　５区 ２８キロメートルから　４０キロメートルまで　　３０８円
+	 *　　　ただし、綾瀬・北千住間相互発着となる場合及び目黒・白金高輪間相互発着となる場合は、
+	 *　　　キロ程によらず、次の各号のとおりとする。
+	 *　　　　　（１）綾瀬・北千住間相互発着となる場合　　　１３３円
+	 *　　　　　（２）目黒・白金高輪間相互発着となる場合　  １６５円
+	**********************************************************************/
 	public pure get運賃 : token * token ==> nat1
-	get運賃(a乗車駅, b降車駅) == return 100;
+	get運賃(a乗車駅, a降車駅) == 
+	 (dcl lキロ程 : real;
+		-- 相互発着の場合
+	  if mk_(a乗車駅, a降車駅) in set dom(相互発着写像) then
+	    return 相互発着写像(mk_(a乗車駅, a降車駅));
+		-- 相互発着ではない場合
+		lキロ程 := キロ程写像(mk_(a乗車駅, a降車駅));
+		if 1 <= lキロ程 and lキロ程 <= 6 then
+		  return 165
+		else if 7 <= lキロ程 and lキロ程 <= 11 then
+		  return 195
+		else if 12 <= lキロ程 and lキロ程 <= 19 then
+		  return 237
+		else if 20 <= lキロ程 and lキロ程 <= 27 then
+		  return 278
+		else if 28 <= lキロ程 and lキロ程 <= 40 then
+		  return 308;
+	)
+	pre
+--	  a乗車駅　in set 駅　and
+--	  a降車駅　in set 駅　and
+	  a乗車駅 <> a降車駅
 
 functions
 -- TODO Define functiones here

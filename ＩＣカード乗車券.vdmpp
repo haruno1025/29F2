@@ -29,8 +29,5 @@ operations
 	public pure get~Ô‰w : () ==> token
 	get~Ô‰w() == return i~Ô‰w;
 
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+
 end ‚h‚bƒJ[ƒhæÔŒ”

@@ -4,16 +4,10 @@
 ------------------------------------------------------------------------
 class 駅
 
-types
-	-- なし
-	
-values
-	-- なし
-		
 instance variables
 	-- instance variablesには頭にiをつける
-	public i駅ナンバリング: token;
-	
+	public i駅ナンバリング : token;
+
 operations
 	-- 引数には頭にaをつける
 
@@ -25,5 +19,11 @@ operations
 		
 	public pure get駅名 : () ==> token
 	get駅名() == return i駅ナンバリング; 
+
+	public 入場を記録する : ＩＣカード乗車券 ==> ()
+	入場を記録する(aＩＣカード乗車券) == aＩＣカード乗車券.set乗車駅(i駅ナンバリング);
+
+	public 退場を記録する : ＩＣカード乗車券 ==> ()
+	退場を記録する(aＩＣカード乗車券) == aＩＣカード乗車券.set降車駅(i駅ナンバリング);
 	
 end 駅

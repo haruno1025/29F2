@@ -1,0 +1,31 @@
+class 東京メトロ
+types
+-- TODO Define types here
+values
+public 駅一覧 : set of token = {mk_token("M01"),mk_token("M02"),mk_token("M03")};
+
+
+instance variables
+protected 駅写像 : map token to 駅 := {|->};
+protected ICカード写像 : map token to ＩＣカード乗車券 := {|->};
+
+
+operations
+public 東京メトロ : () ==> 東京メトロ
+東京メトロ() == (
+  for all a in set 駅一覧 do
+    駅写像 := 駅写像 munion {a |-> new 駅(a)}
+);
+
+public ICカード乗車券を発行する : () ==> ＩＣカード乗車券
+ICカード乗車券を発行する() == return new ＩＣカード乗車券();
+
+public get駅 : token ==> 駅
+get駅(a駅ナンバリング) == return 駅写像(a駅ナンバリング)
+pre
+a駅ナンバリング in set dom(駅写像)
+post
+RESULT = 駅写像(a駅ナンバリング);
+
+
+end 東京メトロ

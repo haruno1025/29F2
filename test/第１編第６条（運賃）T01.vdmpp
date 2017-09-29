@@ -2,7 +2,8 @@ class ‘æ‚P•Ò‘æ‚Uði‰^’ÀjT01 is subclass of TestCase
 
 instance variables
 i‘æ‚P•Ò‘æ‚Uði‰^’Àj : ‘æ‚P•Ò‘æ‚Uði‰^’Àj := new ‘æ‚P•Ò‘æ‚Uði‰^’Àj();
-
+i“Œ‹žƒƒgƒ : “Œ‹žƒƒgƒ := new “Œ‹žƒƒgƒ();
+il : l := new l(mk_token("HARUO"));
 
 operations 
 public ‘æ‚P•Ò‘æ‚Uði‰^’ÀjT01 : () ==> ‘æ‚P•Ò‘æ‚Uði‰^’ÀjT01
@@ -21,8 +22,16 @@ runTest() ==
   (
     dcl io : IO, fare : nat1;
     io := new IO();
-    fare := i‘æ‚P•Ò‘æ‚Uði‰^’Àj.get‰^’À(mk_token("N01"),mk_token("N02"));
-    io.println(fare);
+    io.println(il);
+    il.ICƒJ[ƒh‚ðw“ü‚·‚é(i“Œ‹žƒƒgƒ);
+    io.println(il);
+    il.‰w‚Ö“üê‚·‚é(i“Œ‹žƒƒgƒ.get‰w(mk_token("M01")));
+    io.println(il);
+    il.‰w‚©‚ç‘Þê‚·‚é(i“Œ‹žƒƒgƒ.get‰w(mk_token("M03")));
+    io.println(il);
+
+--    fare := i‘æ‚P•Ò‘æ‚Uði‰^’Àj.get‰^’À(mk_token("N01"),mk_token("N02"));
+ --   io.println(fare);
   );
 
 public tearDown : () ==> ()

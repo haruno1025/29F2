@@ -16,8 +16,9 @@ instance variables
 --	public i乗車駅 : set of メトロ;
 --	public i降車駅 : set of メトロ;
 --	public i相互発着 : set of メトロ
--- 駅の組からの距離
 protected 相互発着写像　: map (token * token ) to nat1 := {|->};
+
+-- 駅の組からの距離 想定:(溜池山王, 虎ノ門) |-> 0.8(km)
 protected キロ程写像　: map (token * token ) to real := {|->};
 
 
@@ -43,22 +44,25 @@ operations
 	**********************************************************************/
 	public pure get運賃 : token * token ==> nat1
 	get運賃(a乗車駅, a降車駅) == 
-	 (dcl lキロ程 : real;
+	 (dcl lキロ程 : real, l運賃 : nat1;
 		-- 相互発着の場合
-	  if mk_(a乗車駅, a降車駅) in set dom(相互発着写像) then
-	    return 相互発着写像(mk_(a乗車駅, a降車駅));
+	 	if mk_(a乗車駅, a降車駅) in set dom(相互発着写像) then
+	    l運賃 := 相互発着写像(mk_(a乗車駅, a降車駅))
 		-- 相互発着ではない場合
-		lキロ程 := キロ程写像(mk_(a乗車駅, a降車駅));
-		if 1 <= lキロ程 and lキロ程 <= 6 then
-		  return 165
-		else if 7 <= lキロ程 and lキロ程 <= 11 then
-		  return 195
-		else if 12 <= lキロ程 and lキロ程 <= 19 then
-		  return 237
-		else if 20 <= lキロ程 and lキロ程 <= 27 then
-		  return 278
-		else if 28 <= lキロ程 and lキロ程 <= 40 then
-		  return 308;
+	  else
+		  lキロ程 := キロ程写像(mk_(a乗車駅, a降車駅));
+		  if 1 <= lキロ程 and lキロ程 <= 6 then
+		    l運賃 := 165
+		  else if 7 <= lキロ程 and lキロ程 <= 11 then
+		    l運賃 := 195
+		  else if 12 <= lキロ程 and lキロ程 <= 19 then
+		    l運賃 := 237
+		  else if 20 <= lキロ程 and lキロ程 <= 27 then
+		    l運賃 := 278
+		  else if 28 <= lキロ程 and lキロ程 <= 40 then
+		    l運賃 := 308;
+
+    return l運賃; 		  
 	)
 	pre
 --	  a乗車駅　in set 駅　and

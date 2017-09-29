@@ -1,15 +1,33 @@
 -- test
 class 人
-types
--- TODO Define types here
-values
--- TODO Define values here
+
 instance variables
--- TODO Define instance variables here
+protected iマイナンバー : token;
+protected iＩＣカード乗車券 : ＩＣカード乗車券;
+
 operations
-	
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+public 人 : token ==> 人
+人(aマイナンバー) ==
+  atomic(
+    iマイナンバー := aマイナンバー;
+  );
+
+public ICカードを購入する : 東京メトロ ==> ()
+ICカードを購入する(a東京メトロ) ==
+  atomic(
+    iＩＣカード乗車券 := a東京メトロ.ICカード乗車券を発行する();
+  );
+
+public 駅へ入場する : 駅 ==> ()
+駅へ入場する(a駅) == a駅.入場を記録する(iＩＣカード乗車券);
+
+public 駅から退場する : 駅 ==> ()
+駅から退場する(a駅) == a駅.退場を記録する(iＩＣカード乗車券);
+
+public pure getマイナンバー : () ==> token
+getマイナンバー() == return iマイナンバー;
+
+public pure getＩＣカード乗車券 : () ==> ＩＣカード乗車券
+getＩＣカード乗車券() == return iＩＣカード乗車券;
+
 end 人

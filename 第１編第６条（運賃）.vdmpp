@@ -71,7 +71,6 @@ operations
 
 
 functions
-
 public static 最短のキロ程を取得する : set of real -> real
 最短のキロ程を取得する(aキロ程) == (
 	let w最短のキロ程 in set aキロ程 be st forall wキロ程 in set aキロ程 & w最短のキロ程 <= wキロ程
@@ -81,7 +80,18 @@ pre
 	aキロ程 <> {}
 post
 	forall wキロ程　in set aキロ程 & RESULT <= wキロ程
+;
 
+public 端数を１キロ単位に切り上げ : real +> nat
+端数を１キロ単位に切り上げ(aキロ程) ==
+  if floor aキロ程 = aキロ程 then
+    floor aキロ程
+  else
+    floor (aキロ程 + 1)
+pre
+  aキロ程 >= 0
+;
+   
 traces
 -- TODO Define Combinatorial Test Traces here
 

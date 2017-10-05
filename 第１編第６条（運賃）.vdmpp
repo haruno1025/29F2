@@ -19,7 +19,7 @@ instance variables
 protected ‘ŠŒİ”­’…Ê‘œ@: map (token * token ) to nat1 := {|->};
 
 -- ‰w‚Ì‘g‚©‚ç‚Ì‹——£ ‘z’è:(—­’rR‰¤, ŒÕƒm–å) |-> 0.8(km)
-protected ƒLƒ’öÊ‘œ@: map (token * token ) to real := {|->};
+protected ƒLƒ’öÊ‘œ@: map (token * token ) to  real := {|->};
 
 
 operations
@@ -65,12 +65,22 @@ operations
     return l‰^’À; 		  
 	)
 	pre
---	  aæÔ‰w@in set ‰w@and
---	  a~Ô‰w@in set ‰w@and
-	  aæÔ‰w <> a~Ô‰w
+		aæÔ‰w <> a~Ô‰w and
+		(	mk_(aæÔ‰w, a~Ô‰w) in set dom(ƒLƒ’öÊ‘œ) or
+			mk_(aæÔ‰w, a~Ô‰w) in set dom(‘ŠŒİ”­’…Ê‘œ))
+
 
 functions
--- TODO Define functiones here
+
+public static Å’Z‚ÌƒLƒ’ö‚ğæ“¾‚·‚é : set of real -> real
+Å’Z‚ÌƒLƒ’ö‚ğæ“¾‚·‚é(aƒLƒ’ö) == (
+	let wÅ’Z‚ÌƒLƒ’ö in set aƒLƒ’ö be st forall wƒLƒ’ö in set aƒLƒ’ö & wÅ’Z‚ÌƒLƒ’ö <= wƒLƒ’ö
+	in wÅ’Z‚ÌƒLƒ’ö
+)
+pre 
+	aƒLƒ’ö <> {}
+post
+	forall wƒLƒ’ö@in set aƒLƒ’ö & RESULT <= wƒLƒ’ö
 
 traces
 -- TODO Define Combinatorial Test Traces here

@@ -70,8 +70,16 @@ operations
 	  a乗車駅 <> a降車駅
 
 functions
--- TODO Define functiones here
-
+public 端数を１キロ単位に切り上げ : real +> nat
+端数を１キロ単位に切り上げ(aキロ程) ==
+  if floor aキロ程 = aキロ程 then
+    floor aキロ程
+  else
+    floor (aキロ程 + 1)
+pre
+  aキロ程 >= 0
+;
+   
 traces
 -- TODO Define Combinatorial Test Traces here
 

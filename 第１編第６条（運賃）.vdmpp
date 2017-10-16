@@ -9,6 +9,7 @@ types
 --	public ”N—î•Ê—·‹q‹æ•ªŒ^ = <‘ål>@| <¬l> | <—c™> | <“û™>;
 	
 values
+public “–Ğü : set of token = {};
 -- TODO Define values here
 
 instance variables
@@ -16,11 +17,23 @@ instance variables
 --	public iæÔ‰w : set of ƒƒgƒ;
 --	public i~Ô‰w : set of ƒƒgƒ;
 --	public i‘ŠŒİ”­’… : set of ƒƒgƒ
+
+-- (—­’rR‰¤, ŒÕƒm–å) |-> 100(‰~)
 protected ‘ŠŒİ”­’…Ê‘œ@: map (token * token ) to nat1 := {|->};
 
 -- ‰w‚Ì‘g‚©‚ç‚Ì‹——£ ‘z’è:(—­’rR‰¤, ŒÕƒm–å) |-> 0.8(km)
-protected ƒLƒ’öÊ‘œ@: map (token * token ) to  real := {|->};
+protected ƒLƒ’öÊ‘œ@: map (token * token ) to set of real := {|->};
 
+-- ‰w‚Ì‘g‚©‚ç‚Ì‰^’À ‘z’è:(—­’rR‰¤, ŒÕƒm–å) |-> 100(‰~)
+protected •’Ê—·‹q‰^’ÀÊ‘œ@: map (token * token ) to nat1 := {|->};
+/*
+inv
+  dom(•’Ê—·‹q‰^’ÀÊ‘œ).(a,b)  in set “–Ğü
+;
+*/
+
+-- ‘æ‚Q€‚Æ‘æ‚S€‚Í‚Æ‚à‚É‘ål‰^’À‚Ì‹àŠz‚ğŒ¾‚Á‚Ä‚¢‚é‚Æ“Ç‚İæ‚ê‚é‚ªA
+-- ‘o•û‚ªˆê’v‚µ‚Ä‚¢‚é‚©‚Í¡‚Ì‚Æ‚±‚ë“Ç‚İæ‚ê‚È‚¢
 
 operations
 
@@ -42,32 +55,59 @@ operations
 	 *@@@@@i‚Pjˆ»£E–kçZŠÔ‘ŠŒİ”­’…‚Æ‚È‚éê‡@@@‚P‚R‚R‰~
 	 *@@@@@i‚Qj–Ú•E”’‹à‚—ÖŠÔ‘ŠŒİ”­’…‚Æ‚È‚éê‡@  ‚P‚U‚T‰~
 	**********************************************************************/
+  -- 6ğ2€
 	public pure get‰^’À : token * token ==> nat1
 	get‰^’À(aæÔ‰w, a~Ô‰w) == 
-	 (dcl lƒLƒ’ö : real, l‰^’À : nat1;
+	 (dcl lÅ’ZƒLƒ’ö : real, lƒLƒ’ö : nat, l‘ål•Ğ“¹•’Ê—·‹q‰^’À : nat1;
 		-- ‘ŠŒİ”­’…‚Ìê‡
 	 	if mk_(aæÔ‰w, a~Ô‰w) in set dom(‘ŠŒİ”­’…Ê‘œ) then
-	    l‰^’À := ‘ŠŒİ”­’…Ê‘œ(mk_(aæÔ‰w, a~Ô‰w))
+	    l‘ål•Ğ“¹•’Ê—·‹q‰^’À := ‘ŠŒİ”­’…Ê‘œ(mk_(aæÔ‰w, a~Ô‰w))
 		-- ‘ŠŒİ”­’…‚Å‚Í‚È‚¢ê‡
 	  else
-		  lƒLƒ’ö := ƒLƒ’öÊ‘œ(mk_(aæÔ‰w, a~Ô‰w));
+@@@@@-- todo 6ğ3€
+		  lÅ’ZƒLƒ’ö := Å’Z‚ÌƒLƒ’ö‚ğæ“¾‚·‚é(ƒLƒ’öÊ‘œ(mk_(aæÔ‰w, a~Ô‰w)));
+		  lƒLƒ’ö := ’[”‚ğ‚PƒLƒ’PˆÊ‚ÉØ‚èã‚°(lÅ’ZƒLƒ’ö);
+@@@@@-- 6ğ2€
 		  if 1 <= lƒLƒ’ö and lƒLƒ’ö <= 6 then
-		    l‰^’À := 165
+		    l‘ål•Ğ“¹•’Ê—·‹q‰^’À := 165
 		  else if 7 <= lƒLƒ’ö and lƒLƒ’ö <= 11 then
-		    l‰^’À := 195
+		    l‘ål•Ğ“¹•’Ê—·‹q‰^’À := 195
 		  else if 12 <= lƒLƒ’ö and lƒLƒ’ö <= 19 then
-		    l‰^’À := 237
+		    l‘ål•Ğ“¹•’Ê—·‹q‰^’À := 237
 		  else if 20 <= lƒLƒ’ö and lƒLƒ’ö <= 27 then
-		    l‰^’À := 278
+		    l‘ål•Ğ“¹•’Ê—·‹q‰^’À := 278
 		  else if 28 <= lƒLƒ’ö and lƒLƒ’ö <= 40 then
-		    l‰^’À := 308;
+		    l‘ål•Ğ“¹•’Ê—·‹q‰^’À := 308;
 
-    return l‰^’À; 		  
+    return l‘ål•Ğ“¹•’Ê—·‹q‰^’À; 		  
 	)
 	pre
 		aæÔ‰w <> a~Ô‰w and
 		(	mk_(aæÔ‰w, a~Ô‰w) in set dom(ƒLƒ’öÊ‘œ) or
 			mk_(aæÔ‰w, a~Ô‰w) in set dom(‘ŠŒİ”­’…Ê‘œ))
+;
+
+  -- 6ğ4€
+	public pure get‰^’À6ğ4€ : token * token ==> nat1
+	get‰^’À6ğ4€(aæÔ‰w, a~Ô‰w) == return •’Ê—·‹q‰^’ÀÊ‘œ(mk_(aæÔ‰w, a~Ô‰w))
+	pre
+		aæÔ‰w <> a~Ô‰w and
+		(	mk_(aæÔ‰w, a~Ô‰w) in set dom(•’Ê—·‹q‰^’ÀÊ‘œ));
+
+  -- ‘æ‚Uğ‚Ì‚Q ¬™•Ğ“¹•’Ê—·‹q‰^’À
+	public pure get‰^’À‚Uğ‚Ì‚Q : nat1 ==> nat1
+	get‰^’À‚Uğ‚Ì‚Q(a‘ål•Ğ“¹•’Ê—·‹q‰^’À) == return floor(a‘ål•Ğ“¹•’Ê—·‹q‰^’À@/ 2) 
+	pre
+		a‘ål•Ğ“¹•’Ê—·‹q‰^’À in set rng(•’Ê—·‹q‰^’ÀÊ‘œ);
+
+--‘æ‚Uğ‚Ì‚R ‚±‚Ì‹K‘¥‚É‹K’è‚·‚é‰^’À‚É‚Â‚¢‚Ä‚ÍAÁ”ïÅ–@iº˜a‚U‚R”N–@—¥‘æ‚P‚O‚W†j‚Ì’è‚ß‚É‚æ‚éÁ”ïÅ‘Š“–Šz
+--‹y‚Ñ’n•ûÅ–@iº˜a‚Q‚T”N–@—¥‘æ‚Q‚Q‚U†j‚Ì’è‚ß‚É‚æ‚é’n•ûÁ”ïÅ‘Š“–Šz‚ğŠÜ‚ñ‚¾Šz‚Æ‚·‚éB
+
+--‘æ‚Vğ ‹L–¼‚h‚bƒJ[ƒh‚ÉŒW‚éŒÂlî•ñ‚Ìæˆµ‚¢‚ÍA‚h‚bƒJ[ƒh”­s–‹ÆÒ‚Ì’è‚ß‚é‚Æ‚±‚ë‚É‚æ‚éB
+
+--‘æ‚Wğ —·‹q‚ÍA‚±‚Ì‹K‘¥‹y‚Ñ‚±‚ê‚ÉŠî‚Ã‚¢‚Ä’è‚ß‚ç‚ê‚½‹K’è‚ğ³”F‚µA‚©‚ÂA‚±‚ê‚É“¯ˆÓ‚µ‚½‚à‚Ì‚Æ‚·‚éB
+
+--‘æ‚Xğ “–Ğ‚É‚¨‚¯‚é‚h‚bƒJ[ƒhæÔŒ”‚Ìæˆµ‹æŠÔ‚ÍA‰c‹Æ‹K’ö‘æ‚Rğ‘æ‚P†‚É‹K’è‚·‚é“–Ğü‚Æ‚·‚éB
 
 
 functions
@@ -91,7 +131,8 @@ public ’[”‚ğ‚PƒLƒ’PˆÊ‚ÉØ‚èã‚° : real +> nat
 pre
   aƒLƒ’ö >= 0
 ;
-   
+
+--    
 traces
 -- TODO Define Combinatorial Test Traces here
 

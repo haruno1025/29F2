@@ -3,13 +3,14 @@
 --        ‚ğ‚¢‚¤B
 ------------------------------------------------------------------------
 
-class ‘æ‚P•Ò‘æ‚Uği‰^’Àj
+class ‘æ‚P•Ò‘æ‚Uği‰^’Àj is subclass of “Œ‹ƒƒgƒ
 
 types
 --	public ”N—î•Ê—·‹q‹æ•ªŒ^ = <‘ål>@| <¬l> | <—c™> | <“û™>;
 	
 values
-public “–Ğü : set of token = {};
+
+public ‰w : set of token = {};
 -- TODO Define values here
 
 instance variables
@@ -26,11 +27,10 @@ protected ƒLƒ’öÊ‘œ@: map (token * token ) to set of real := {|->};
 
 -- ‰w‚Ì‘g‚©‚ç‚Ì‰^’À ‘z’è:(—­’rR‰¤, ŒÕƒm–å) |-> 100(‰~)
 protected •’Ê—·‹q‰^’ÀÊ‘œ@: map (token * token ) to nat1 := {|->};
-/*
 inv
-  dom(•’Ê—·‹q‰^’ÀÊ‘œ).(a,b)  in set “–Ğü
+  forall mk_(aæÔ‰w, a~Ô‰w) in set dom(•’Ê—·‹q‰^’ÀÊ‘œ)
+    & aæÔ‰w in set “–Ğü and a~Ô‰w in set “–Ğü
 ;
-*/
 
 -- ‘æ‚Q€‚Æ‘æ‚S€‚Í‚Æ‚à‚É‘ål‰^’À‚Ì‹àŠz‚ğŒ¾‚Á‚Ä‚¢‚é‚Æ“Ç‚İæ‚ê‚é‚ªA
 -- ‘o•û‚ªˆê’v‚µ‚Ä‚¢‚é‚©‚Í¡‚Ì‚Æ‚±‚ë“Ç‚İæ‚ê‚È‚¢

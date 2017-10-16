@@ -3,6 +3,12 @@ types
 -- TODO Define types here
 values
 public ‰wˆê—— : set of token = {mk_token("M01"),mk_token("M02"),mk_token("M03")};
+-- ç‘ã“cü, “ú”ä’Jü, EEE
+-- “ú”ä’Jü
+public “ú”ä’Jü : set of token = {mk_token("H01"),mk_token("H02"),mk_token("H03")};
+public ‹âÀü   : set of token = {mk_token("G01"),mk_token("G02"),mk_token("G03")};
+
+public “–Ğü : set of token = “ú”ä’Jü union ‹âÀü;
 
 
 instance variables

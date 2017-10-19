@@ -1,7 +1,7 @@
 class 第１編第６条（運賃）T01 is subclass of TestCase
 
 instance variables
-i第１編第６条（運賃） : 第１編第６条（運賃） := new 第１編第６条（運賃）();
+i第１編（総則） : 第１編（総則） := new 第１編（総則）();
 i東京メトロ : 東京メトロ := new 東京メトロ();
 i人 : 人 := new 人(mk_token("HARUO"));
 

@@ -30,5 +30,12 @@ operations
 	public pure get~Ô‰w : () ==> token
 	get~Ô‰w() == return i~Ô‰w;
 
+	--todo
+	--  add del‚É•ÏX‚·‚é
+	public setSF : nat1 ==> ()
+	setSF(a“ü‹àŠz) == iSF := a“ü‹àŠz;
+	
+	public pure getSF : () ==> nat
+	getSF() == return iSF;
 
 end ‚h‚bƒJ[ƒhæÔŒ”

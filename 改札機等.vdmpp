@@ -1,0 +1,29 @@
+class 改札機等
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+-- TODO Define instance variables here
+	i駅ナンバリング: token
+operations
+-- TODO Define operations here
+	public 改札機等 : token ==> 改札機等
+	改札機等(a駅ナンバリング) == i駅ナンバリング := a駅ナンバリング;
+
+	public 入場する : ＩＣカード乗車券 ==> ()
+	入場する(aＩＣカード乗車券) == aＩＣカード乗車券.set乗車駅(i駅ナンバリング);
+
+	public 退場する : ＩＣカード乗車券 ==> ()
+	退場する(aＩＣカード乗車券) == (
+		dcl l運賃 : nat1 ;
+--		l運賃 := get運賃_第６条４項(aＩＣカード乗車券.get乗車駅, i駅ナンバリング);
+		--ＩＣＳＦから減額する
+		aＩＣカード乗車券.set降車駅(i駅ナンバリング);
+	);
+	
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end 改札機等

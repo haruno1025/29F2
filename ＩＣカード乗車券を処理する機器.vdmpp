@@ -1,0 +1,30 @@
+class ＩＣカード乗車券を処理する機器
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+-- TODO Define instance variables here
+operations
+-- TODO Define operations here
+/*
+第２編 ＩＣＳＦカード
+第１章 発売
+（チャージ）
+第１２条 ＩＣＳＦカードは、ＩＣ発行事業者規則の定めによりＩＣカード乗車券を処理する機器によりチャージするこ
+とができる。
+
+comment 「入金」とは現状の金額に入金額を加算することとみなした
+*/
+	public チャージする : ＩＣカード乗車券 * nat1 ==> ＩＣカード乗車券
+	チャージする(aＩＣカード乗車券, a入金額) == (
+	  aＩＣカード乗車券.setSF(aＩＣカード乗車券.getSF() + a入金額);
+		return aＩＣカード乗車券
+	);
+
+
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end ＩＣカード乗車券を処理する機器

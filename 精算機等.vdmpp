@@ -1,0 +1,37 @@
+class ¸Z‹@“™@is subclass of ‚h‚bƒJ[ƒhæÔŒ”‚ğˆ—‚·‚é‹@Ší
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+-- TODO Define instance variables here
+operations
+-- TODO Define operations here
+	public •s‘«Šz‚ğƒ`ƒƒ[ƒW‚·‚é : ‚h‚bƒJ[ƒhæÔŒ” * nat1 ==> ‚h‚bƒJ[ƒhæÔŒ”
+	•s‘«Šz‚ğƒ`ƒƒ[ƒW‚·‚é(a‚h‚bƒJ[ƒhæÔŒ”, a“ü‹àŠz) == (
+		  a‚h‚bƒJ[ƒhæÔŒ”.setSF(a‚h‚bƒJ[ƒhæÔŒ”.getSF() + a“ü‹àŠz);
+		return a‚h‚bƒJ[ƒhæÔŒ”
+	)
+	pre
+		•s‘«Šz(a‚h‚bƒJ[ƒhæÔŒ”, mk_token("M01")) > 0	
+  and a“ü‹àŠz = ’[”‚ğ‚P‚O‰~’PˆÊ‚ÉØ‚èã‚°(•s‘«Šz(a‚h‚bƒJ[ƒhæÔŒ”, mk_token("M01")))
+	;
+	
+	public pure •s‘«Šz : ‚h‚bƒJ[ƒhæÔŒ” * token ==> int
+	•s‘«Šz(a‚h‚bƒJ[ƒhæÔŒ”, a~Ô‰w) == (
+		dcl l‰^’À : ‘æ‚P•Òi‘‘¥j := new ‘æ‚P•Òi‘‘¥j() ;
+	  return (a‚h‚bƒJ[ƒhæÔŒ”.getSF() - l‰^’À.get‰^’À_‘æ‚Uğ‚S€(a‚h‚bƒJ[ƒhæÔŒ”.getæÔ‰w(), a~Ô‰w)) * (-1)
+	  );
+	
+functions
+-- TODO Define functiones here
+	public ’[”‚ğ‚P‚O‰~’PˆÊ‚ÉØ‚èã‚° : nat +> nat
+	’[”‚ğ‚P‚O‰~’PˆÊ‚ÉØ‚èã‚°(a•s‘«Šz) == 
+  	if floor a•s‘«Šz mod 10 = 0 then
+    	a•s‘«Šz 
+  	else
+    	(floor (a•s‘«Šz/10 + 1)) * 10
+  	
+traces
+-- TODO Define Combinatorial Test Traces here
+end ¸Z‹@“™

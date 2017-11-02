@@ -11,8 +11,9 @@ execute() == (
     
     result.addListener(new MyPrintTestListener());
 
-    suite.addTest(new ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01("case01 - no problem"));
-  --suite.addTest(new ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT02("case02 - no problem"));
+  --  suite.addTest(new ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT01("case01 - no problem"));
+  --  suite.addTest(new ‘æ‚P•Ò‘æ‚Uği‰^’ÀjT02("case02 - no problem"));
+    suite.addTest(new SimpleGoT01("case01 - no problem"));
 
     suite.run(result);
 );

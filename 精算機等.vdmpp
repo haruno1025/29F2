@@ -4,9 +4,13 @@ types
 values
 -- TODO Define values here
 instance variables
--- TODO Define instance variables here
+	i駅ナンバリング: token
+
 operations
 -- TODO Define operations here
+	public 精算機等 : token ==> 精算機等
+	精算機等(a駅ナンバリング) == i駅ナンバリング := a駅ナンバリング;
+
 	public 不足額をチャージする : ＩＣカード乗車券 * nat1 ==> ＩＣカード乗車券
 	不足額をチャージする(aＩＣカード乗車券, a入金額) == (
 		  aＩＣカード乗車券.setSF(aＩＣカード乗車券.getSF() + a入金額);

@@ -224,17 +224,18 @@ public 当社線 : set of token = 日比谷線
 
 instance variables
 protected 駅写像 : map token to 駅 := {|->};
+inv
+   forall a in set dom(駅写像) & a = 駅写像(a).get駅名();
+
 protected ICカード写像 : map token to ＩＣカード乗車券 := {|->};
 
 
 operations
-/*
 public 東京メトロ : () ==> 東京メトロ
 東京メトロ() == (
-  for all a in set 駅一覧 do
+  for all a in set 半蔵門線 do
     駅写像 := 駅写像 munion {a |-> new 駅(a)}
 );
-*/
 
 public ICカード乗車券を発行する : () ==> ＩＣカード乗車券
 ICカード乗車券を発行する() == return new ＩＣカード乗車券();

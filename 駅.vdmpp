@@ -8,6 +8,7 @@ instance variables
 	-- instance variables‚É‚Í“ª‚Éi‚ð‚Â‚¯‚é
 	public i‰wƒiƒ“ƒoƒŠƒ“ƒO : token;
 	public i‰üŽD‹@“™ : ‰üŽD‹@“™;
+	public i¸ŽZ‹@“™ : ¸ŽZ‹@“™;
 	
 
 operations
@@ -18,6 +19,7 @@ operations
 		atomic (
 			i‰wƒiƒ“ƒoƒŠƒ“ƒO := a‰wƒiƒ“ƒoƒŠƒ“ƒO;
 			i‰üŽD‹@“™ := new ‰üŽD‹@“™(a‰wƒiƒ“ƒoƒŠƒ“ƒO)
+			i¸ŽZ‹@“™ := new ¸ŽZ‹@“™(a‰wƒiƒ“ƒoƒŠƒ“ƒO)
 		);
 		
 	public pure get‰w–¼ : () ==> token

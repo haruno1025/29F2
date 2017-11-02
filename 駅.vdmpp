@@ -35,6 +35,8 @@ operations
 	‚h‚bƒJ[ƒhæÔŒ”‚ğ”­”„‚·‚é() == return new ‚h‚bƒJ[ƒhæÔŒ”();
 	--’A‚µ‘‚«‚Íœ‚­
 	
+	public get‰üD‹@“™ : () ==> ‰üD‹@“™
+	get‰üD‹@“™() == return i‰üD‹@“™; 
 	
 	
 end ‰w

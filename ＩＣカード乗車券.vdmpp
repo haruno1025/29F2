@@ -16,6 +16,7 @@ operations
 		atomic (
 			iæŽÔ‰w := mk_token("NULL"); 
 			i~ŽÔ‰w := mk_token("NULL");
+			iSF := 0
 		);
 	
 	public setæŽÔ‰w : token ==> ()

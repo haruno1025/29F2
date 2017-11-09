@@ -12,7 +12,7 @@
 --    ‘æ‚P‚Oğ(§ŒÀ–”‚Í’â~)
 ------------------------------------------------------------------------
 
-class ‘æ‚P•Òi‘‘¥j is subclass of “Œ‹ƒƒgƒ
+class ‚h‚bƒJ[ƒhæÔŒ”æˆµ‹K‘¥ is subclass of —·‹q‰c‹Æ‹K’è
   -- ‘æ‚Pğ(–Ú“I)
   --@  ‚±‚Ì‹K‘¥‚ÍA“Œ‹’n‰º“SŠ”®‰ïĞiˆÈ‰ºu“–Ğv‚Æ‚¢‚¤Bj‚É‚¨‚¯‚éA‚h‚bƒJ[ƒh‚ğ”}‘Ì‚Æ‚µ‚½æÔŒ”iˆÈ
   --  ‰ºu‚h‚bƒJ[ƒhæÔŒ”v‚Æ‚¢‚¤Bj‚É‚æ‚é—·‹q‰^‘—“™‚É‚Â‚¢‚ÄA‚»‚Ìg—pğŒ‚ğ’è‚ßA‚à‚Á‚Ä—·‹q‚Ì—˜•Ö«
@@ -119,14 +119,9 @@ types
   
 values
 
-public ‰w : set of token = {};
--- TODO Define values here
+--	public ‰w : set of token = {};
 
 instance variables
---	public i”N—î•Ê—·‹q‹æ•ª : ”N—î•Ê—·‹q‹æ•ªŒ^;
---	public iæÔ‰w : set of ƒƒgƒ;
---	public i~Ô‰w : set of ƒƒgƒ;
---	public i‘ŠŒİ”­’… : set of ƒƒgƒ
 
 	/*
 	 * ˆ»£E–kçZŠÔ‘ŠŒİ”­’…‚Æ‚È‚éê‡‹y‚Ñ–Ú•E”’‹à‚—ÖŠÔ‘ŠŒİ”­’…
@@ -493,7 +488,38 @@ operations
 	**********************************************************************/
   public pure “–Ğü‰w‚Å‚ ‚é : token ==> bool
 	“–Ğü‰w‚Å‚ ‚é(a‰wƒiƒ“ƒoƒŠƒ“ƒO) ==
-  	if a‰wƒiƒ“ƒoƒŠƒ“ƒO in set “–Ğü then return true else return false;
+--	  	if a‰wƒiƒ“ƒoƒŠƒ“ƒO in set “–Ğü then return true else return false;
+		return true;
+	/*
+	‘æ‚Q•Ò ‚h‚b‚r‚eƒJ[ƒh
+‘æ‚PÍ ”­”„
+i”­”„j
+	‘æ‚P‚Pğ ‚h‚b‚r‚eƒJ[ƒh‚ÍA‚h‚b”­s–‹ÆÒ‹K‘¥‚Ì’è‚ß‚É‚æ‚è‰w“™‚Å”­”„‚·‚éB‚½‚¾‚µA‹L–¼‚h‚bƒJ[ƒh‚Ìw“ü‚ğŠó–]
+‚·‚é—·‹q‚ª‚h‚bƒJ[ƒhæÔŒ”‚ğˆ—‚·‚é‹@Ší‚É‚æ‚èA‚o‚`‚r‚l‚nE’èŠúæÔŒ”w“ü\‘i—l®‘æ‚P†BˆÈ‰ºuw“ü\
+‘v‚Æ‚¢‚¤Bj‚É‹LÚ‚·‚×‚«–€‚ğ“ü—Í‚µ‚½ê‡‚ÍAw“ü\‘‚Ì’ño‚ğÈ—ª‚µ”­”„‚·‚é‚±‚Æ‚ª‚Å‚«‚éB
+	*/
+	public ‚h‚b‚r‚eƒJ[ƒh‚ğ”­”„‚·‚é : () ==> ‚h‚bƒJ[ƒhæÔŒ”
+	‚h‚b‚r‚eƒJ[ƒh‚ğ”­”„‚·‚é() == return new ‚h‚bƒJ[ƒhæÔŒ”();
+	--’A‚µ‘‚«‚Íœ‚­
+
+
+/*
+‘æ‚Q•Ò ‚h‚b‚r‚eƒJ[ƒh
+‘æ‚PÍ ”­”„
+iƒ`ƒƒ[ƒWj
+‘æ‚P‚Qğ ‚h‚b‚r‚eƒJ[ƒh‚ÍA‚h‚b”­s–‹ÆÒ‹K‘¥‚Ì’è‚ß‚É‚æ‚è‚h‚bƒJ[ƒhæÔŒ”‚ğˆ—‚·‚é‹@Ší‚É‚æ‚èƒ`ƒƒ[ƒW‚·‚é‚±
+‚Æ‚ª‚Å‚«‚éB
+
+comment u“ü‹àv‚Æ‚ÍŒ»ó‚Ì‹àŠz‚É“ü‹àŠz‚ğ‰ÁZ‚·‚é‚±‚Æ‚Æ‚İ‚È‚µ‚½
+*/
+	public ƒ`ƒƒ[ƒW‚·‚é : ‚h‚bƒJ[ƒhæÔŒ” * nat1 ==> ‚h‚bƒJ[ƒhæÔŒ”
+	ƒ`ƒƒ[ƒW‚·‚é(a‚h‚bƒJ[ƒhæÔŒ”, a“ü‹àŠz) == (
+	  a‚h‚bƒJ[ƒhæÔŒ”.setSF(a‚h‚bƒJ[ƒhæÔŒ”.getSF() + a“ü‹àŠz);
+		return a‚h‚bƒJ[ƒhæÔŒ”
+	);
+
+
+
 
 functions
 
@@ -520,8 +546,8 @@ functions
   	aƒLƒ’ö >= 0
 	;
 
---    
-traces
--- TODO Define Combinatorial Test Traces here
 
-end ‘æ‚P•Òi‘‘¥j
+traces
+
+
+end ‚h‚bƒJ[ƒhæÔŒ”æˆµ‹K‘¥

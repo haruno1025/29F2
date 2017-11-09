@@ -1,7 +1,7 @@
 class 東京メトロ
 
 types
--- TODO Define types here
+
 
 values
 -- 日比谷線内の駅
@@ -208,46 +208,27 @@ public 副都心線 : set of token = { mk_token("F01")   -- 和光市
                                 };
 
 
--- 旅客営業規定 第３条第１号
---  この規程において、次の各号に掲げる用語の定義は、次のとおりとする。
---   （１）当社線　銀座線、丸ノ内線、日比谷線、東西線、千代田線、有楽町線、半蔵門線、南北線及び副都心線をいう。
-public 当社線 : set of token = 日比谷線 
-                              union 銀座線
-                              union 丸の内線
-                              union 東西線
-                              union 南北線
-                              union 有楽町線
-                              union 千代田線
-                              union 半蔵門線
-                              union 副都心線;
-
-
 instance variables
-protected 駅写像 : map token to 駅 := {|->};
-inv
-   forall a in set dom(駅写像) & a = 駅写像(a).get駅名();
+	protected 駅写像 : map token to 駅 := {|->};
+	inv
+		forall a in set dom(駅写像) & a = 駅写像(a).get駅名();
 
-protected ICカード写像 : map token to ＩＣカード乗車券 := {|->};
-
-protected i第１編（総則） : 第１編（総則）
+	protected ICカード写像 : map token to ＩＣカード乗車券 := {|->};
 
 
 operations
-public 東京メトロ : () ==> 東京メトロ
-東京メトロ() == (
-  for all a in set 半蔵門線 do
-    駅写像 := 駅写像 munion {a |-> new 駅(a)};
-);
+	public 東京メトロ : () ==> 東京メトロ
+	東京メトロ() == (
+  	for all a in set 半蔵門線 do
+    	駅写像 := 駅写像 munion {a |-> new 駅(a)};
+	);
 
-public ICカード乗車券を発行する : () ==> ＩＣカード乗車券
-ICカード乗車券を発行する() == return new ＩＣカード乗車券();
-
-public get駅 : token ==> 駅
-get駅(a駅ナンバリング) == return 駅写像(a駅ナンバリング)
-pre
-a駅ナンバリング in set dom(駅写像)
-post
-RESULT = 駅写像(a駅ナンバリング);
+	public get駅 : token ==> 駅
+	get駅(a駅ナンバリング) == return 駅写像(a駅ナンバリング)
+	pre
+		a駅ナンバリング in set dom(駅写像)
+	post
+		RESULT = 駅写像(a駅ナンバリング);
 
 
 end 東京メトロ

@@ -1,15 +1,20 @@
 class ¸Z‹@“™@is subclass of ‚h‚bƒJ[ƒhæÔŒ”‚ğˆ—‚·‚é‹@Ší
 types
--- TODO Define types here
+
 values
--- TODO Define values here
+
 instance variables
-	i‰wƒiƒ“ƒoƒŠƒ“ƒO: token
+	i‰wƒiƒ“ƒoƒŠƒ“ƒO: token;
+	i‚h‚bƒJ[ƒhæÔŒ”æˆµ‹K‘¥ : ‚h‚bƒJ[ƒhæÔŒ”æˆµ‹K‘¥
 
 operations
--- TODO Define operations here
-	public ¸Z‹@“™ : token ==> ¸Z‹@“™
-	¸Z‹@“™(a‰wƒiƒ“ƒoƒŠƒ“ƒO) == i‰wƒiƒ“ƒoƒŠƒ“ƒO := a‰wƒiƒ“ƒoƒŠƒ“ƒO;
+	public ¸Z‹@“™ : token * ‚h‚bƒJ[ƒhæÔŒ”æˆµ‹K‘¥ ==> ¸Z‹@“™
+	¸Z‹@“™(a‰wƒiƒ“ƒoƒŠƒ“ƒO, a‚h‚bƒJ[ƒhæÔŒ”æˆµ‹K‘¥) == (
+		atomic(
+			i‰wƒiƒ“ƒoƒŠƒ“ƒO := a‰wƒiƒ“ƒoƒŠƒ“ƒO;
+			i‚h‚bƒJ[ƒhæÔŒ”æˆµ‹K‘¥ := a‚h‚bƒJ[ƒhæÔŒ”æˆµ‹K‘¥
+		);
+	);
 
 	public •s‘«Šz‚ğƒ`ƒƒ[ƒW‚·‚é : ‚h‚bƒJ[ƒhæÔŒ” * nat1 ==> ‚h‚bƒJ[ƒhæÔŒ”
 	•s‘«Šz‚ğƒ`ƒƒ[ƒW‚·‚é(a‚h‚bƒJ[ƒhæÔŒ”, a“ü‹àŠz) == (
@@ -17,18 +22,16 @@ operations
 		return a‚h‚bƒJ[ƒhæÔŒ”
 	)
 	pre
-		•s‘«Šz(a‚h‚bƒJ[ƒhæÔŒ”, mk_token("M01")) > 0	
-  and a“ü‹àŠz = ’[”‚ğ‚P‚O‰~’PˆÊ‚ÉØ‚èã‚°(•s‘«Šz(a‚h‚bƒJ[ƒhæÔŒ”, mk_token("M01")))
+		•s‘«Šz(a‚h‚bƒJ[ƒhæÔŒ”, i‰wƒiƒ“ƒoƒŠƒ“ƒO) > 0	
+  and a“ü‹àŠz = ’[”‚ğ‚P‚O‰~’PˆÊ‚ÉØ‚èã‚°(•s‘«Šz(a‚h‚bƒJ[ƒhæÔŒ”, i‰wƒiƒ“ƒoƒŠƒ“ƒO))
 	;
 	
 	public pure •s‘«Šz : ‚h‚bƒJ[ƒhæÔŒ” * token ==> int
-	•s‘«Šz(a‚h‚bƒJ[ƒhæÔŒ”, a~Ô‰w) == (
-		dcl l‰^’À : ‘æ‚P•Òi‘‘¥j := new ‘æ‚P•Òi‘‘¥j() ;
-	  return (a‚h‚bƒJ[ƒhæÔŒ”.getSF() - l‰^’À.get‰^’À_‘æ‚Uğ‚S€(a‚h‚bƒJ[ƒhæÔŒ”.getæÔ‰w(), a~Ô‰w)) * (-1)
-	  );
+	•s‘«Šz(a‚h‚bƒJ[ƒhæÔŒ”, a~Ô‰w) == 
+	  return (a‚h‚bƒJ[ƒhæÔŒ”.getSF() - i‚h‚bƒJ[ƒhæÔŒ”æˆµ‹K‘¥.get‰^’À_‘æ‚Uğ‚S€(a‚h‚bƒJ[ƒhæÔŒ”.getæÔ‰w(), a~Ô‰w)) * (-1)
+	  ;
 	
 functions
--- TODO Define functiones here
 	public ’[”‚ğ‚P‚O‰~’PˆÊ‚ÉØ‚èã‚° : nat +> nat
 	’[”‚ğ‚P‚O‰~’PˆÊ‚ÉØ‚èã‚°(a•s‘«Šz) == 
   	if floor a•s‘«Šz mod 10 = 0 then
@@ -37,5 +40,5 @@ functions
     	(floor (a•s‘«Šz/10 + 1)) * 10
   	
 traces
--- TODO Define Combinatorial Test Traces here
+
 end ¸Z‹@“™

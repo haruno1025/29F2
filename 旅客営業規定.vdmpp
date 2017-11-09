@@ -1,0 +1,28 @@
+class 旅客営業規定
+types
+	public 当社線 = set of token
+
+values
+
+instance variables
+-- 旅客営業規定 第３条第１号
+--  この規程において、次の各号に掲げる用語の定義は、次のとおりとする。
+--   （１）当社線　銀座線、丸ノ内線、日比谷線、東西線、千代田線、有楽町線、半蔵門線、南北線及び副都心線をいう。
+/*
+public 当社線 : set of token = 日比谷線 
+                              union 銀座線
+                              union 丸の内線
+                              union 東西線
+                              union 南北線
+                              union 有楽町線
+                              union 千代田線
+                              union 半蔵門線
+                              union 副都心線;
+*/
+operations
+
+functions
+
+traces
+
+end 旅客営業規定

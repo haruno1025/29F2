@@ -1,8 +1,8 @@
 class SimpleGoT01 is subclass of TestCase
 
 instance variables
---i第１編（総則） : 第１編（総則） := new 第１編（総則）();
 i東京メトロ : 東京メトロ := new 東京メトロ();
+i駅 : 駅 := new 駅(mk_token("Z04"));
 i人 : 人 := new 人(mk_token("HARUO"));
 
 operations 
@@ -23,9 +23,9 @@ runTest() ==
     dcl io : IO, fare : nat1;
     io := new IO();
     io.println(i人);
-    i人.ICカードを購入する(i東京メトロ);
+    i人.ICカードを購入する(i駅);
     io.println(i人);
-    i人.チャージする(1000);
+    i人.チャージする(i駅, 1000);
     io.println(i人);
     i人.駅へ入場する(i東京メトロ.get駅(mk_token("Z01")));
     io.println(i人);

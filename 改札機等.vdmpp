@@ -1,29 +1,34 @@
-class 改札機等
+class 改札機等　is subclass of ＩＣカード乗車券を処理する機器
 types
--- TODO Define types here
+
 values
--- TODO Define values here
+
 instance variables
--- TODO Define instance variables here
-	i駅ナンバリング: token
+	i駅ナンバリング: token;
+	iＩＣカード乗車券取扱規則 : ＩＣカード乗車券取扱規則
+
 operations
--- TODO Define operations here
-	public 改札機等 : token ==> 改札機等
-	改札機等(a駅ナンバリング) == i駅ナンバリング := a駅ナンバリング;
+	public 改札機等 : token * ＩＣカード乗車券取扱規則 ==> 改札機等
+	改札機等(a駅ナンバリング, aＩＣカード乗車券取扱規則) == (
+		atomic(
+			i駅ナンバリング := a駅ナンバリング;
+			iＩＣカード乗車券取扱規則 := aＩＣカード乗車券取扱規則
+		);
+	);
 
 	public 入場する : ＩＣカード乗車券 ==> ()
 	入場する(aＩＣカード乗車券) == aＩＣカード乗車券.set乗車駅(i駅ナンバリング);
 
 	public 退場する : ＩＣカード乗車券 ==> ()
 	退場する(aＩＣカード乗車券) == (
-		dcl l運賃 : nat1 , l第１編（総則） : 第１編（総則） := new 第１編（総則）();
-		l運賃 := l第１編（総則）.get運賃_第６条４項(aＩＣカード乗車券.get乗車駅(), i駅ナンバリング);
+		dcl l運賃 : nat1 ;
+		l運賃 := iＩＣカード乗車券取扱規則.get運賃_第６条４項(aＩＣカード乗車券.get乗車駅(), i駅ナンバリング);
 		aＩＣカード乗車券.setSF(aＩＣカード乗車券.getSF() - l運賃);
 		aＩＣカード乗車券.set降車駅(i駅ナンバリング);
 	);
 	
 functions
--- TODO Define functiones here
+
 traces
--- TODO Define Combinatorial Test Traces here
+
 end 改札機等

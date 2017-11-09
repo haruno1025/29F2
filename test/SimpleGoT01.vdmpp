@@ -7,7 +7,7 @@ il : l := new l(mk_token("HARUO"));
 
 operations 
 public SimpleGoT01 : () ==> SimpleGoT01
-SimpleGoT01() == TestCase("SimpleGoT01");
+Simple		GoT01() == TestCase("SimpleGoT01");
 
 public SimpleGoT01 : seq of char ==> SimpleGoT01
 SimpleGoT01(str) == TestCase(str);

@@ -1,25 +1,29 @@
-class 改札機等
+class 改札機等 is subclass of 定義
 types
 -- TODO Define types here
 values
 -- TODO Define values here
 instance variables
--- TODO Define instance variables here
-	i駅ナンバリング: token
+	i駅名 : t駅名
+
 operations
 -- TODO Define operations here
-	public 改札機等 : token ==> 改札機等
-	改札機等(a駅ナンバリング) == i駅ナンバリング := a駅ナンバリング;
+	public 改札機等 : t駅名 ==> 改札機等
+	改札機等(a駅名) == i駅名 := a駅名;
 
-	public 入場する : ＩＣカード乗車券 ==> ()
-	入場する(aＩＣカード乗車券) == aＩＣカード乗車券.set乗車駅(i駅ナンバリング);
+	public 入場する : ＩＣカード乗車券 ==> ＩＣカード乗車券
+	入場する(aＩＣカード乗車券) == (
+	  aＩＣカード乗車券.set乗車駅(i駅名);
+	  return aＩＣカード乗車券;
+	);
 
-	public 退場する : ＩＣカード乗車券 ==> ()
+	public 退場する : ＩＣカード乗車券 ==> ＩＣカード乗車券
 	退場する(aＩＣカード乗車券) == (
 		dcl l運賃 : nat1 , l第１編（総則） : 第１編（総則） := new 第１編（総則）();
-		l運賃 := l第１編（総則）.get運賃_第６条４項(aＩＣカード乗車券.get乗車駅(), i駅ナンバリング);
+		l運賃 := l第１編（総則）.get運賃_第６条４項(aＩＣカード乗車券.get乗車駅(), i駅名);
 		aＩＣカード乗車券.setSF(aＩＣカード乗車券.getSF() - l運賃);
-		aＩＣカード乗車券.set降車駅(i駅ナンバリング);
+		aＩＣカード乗車券.set降車駅(i駅名);
+		return aＩＣカード乗車券;
 	);
 	
 functions

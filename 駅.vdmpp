@@ -2,28 +2,33 @@
 --  駅
 --    ・メトロの駅情報を保持する
 ------------------------------------------------------------------------
-class 駅
+class 駅 is subclass of 定義
 
 instance variables
 	-- instance variablesには頭にiをつける
-	public i駅ナンバリング : token;
-	public i改札機等 : 改札機等;
-	public i精算機等 : 精算機等;
+	private i駅名 : t駅名;
+	private i駅ナンバリングs : set of t駅ナンバリング;
+	private i改札機等 : 改札機等;
+	private i精算機等 : 精算機等;
 	
 
 operations
 	-- 引数には頭にaをつける
 
-	public 駅 : token ==> 駅
-	駅(a駅ナンバリング) ==
+	public 駅 : t駅名 * set of t駅ナンバリング ==> 駅
+	駅(a駅名, a駅ナンバリングs) ==
 		atomic (
-			i駅ナンバリング := a駅ナンバリング;
-			i改札機等 := new 改札機等(a駅ナンバリング)
-			i精算機等 := new 精算機等(a駅ナンバリング)
+		  i駅名 := a駅名
+			i駅ナンバリングs := a駅ナンバリングs;
+			i改札機等 := new 改札機等(a駅名)
+			i精算機等 := new 精算機等(a駅名)
 		);
 		
-	public pure get駅名 : () ==> token
-	get駅名() == return i駅ナンバリング; 
+	public pure get駅名 : () ==> t駅名
+	get駅名() == return i駅名; 
+
+	public pure get駅ナンバリング : () ==> set of t駅ナンバリング
+	get駅ナンバリング() == return i駅ナンバリングs; 
 
 	/*
 	第２編 ＩＣＳＦカード

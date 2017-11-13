@@ -1,0 +1,34 @@
+class ‘ŠŒÝ”­’…
+types
+
+values
+
+instance variables
+	/*
+	 * ˆ»£E–kçZŠÔ‘ŠŒÝ”­’…‚Æ‚È‚éê‡‹y‚Ñ–Ú•E”’‹à‚—ÖŠÔ‘ŠŒÝ”­’…
+	 * ‚Æ‚È‚éê‡‚ÍAƒLƒ’ö‚É‚æ‚ç‚¸AŽŸ‚ÌŠe†‚Ì‚Æ‚¨‚è‚Æ‚·‚éB
+	 *   (1) ˆ»£E–kçZŠÔ‘ŠŒÝ”­’…‚Æ‚È‚éê‡		133‰~
+	 *        (C18, C19) |-> 133  -- –kçZ ¨ ˆ»£
+	 *        (H21, C19) |-> 133  -- –kçZ ¨ ˆ»£
+	 *        (C19, C18) |-> 133  -- ˆ»£ ¨ –kçZ
+	 *        (C19, H21) |-> 133  -- ˆ»£ ¨ –kçZ
+	 *   (2) –Ú•E”’‹à‚—ÖŠÔ‘ŠŒÝ”­’…‚Æ‚È‚éê‡		165‰~
+	 *        (N01, N03) |-> 165  -- –Ú• ¨ ”’‹à‚—Ö
+	 *        (N03, N01) |-> 165  -- ”’‹à‚—Ö ¨ –Ú•
+	 */
+	i‘ŠŒÝ”­’…ŽÊ‘œ : map (token * token ) to nat1 := {
+		mk_(mk_token("C18"), mk_token("C19")) |-> 133,
+		mk_(mk_token("H21"), mk_token("C19")) |-> 133,
+		mk_(mk_token("C19"), mk_token("C18")) |-> 133,
+		mk_(mk_token("C19"), mk_token("H21")) |-> 133,
+		mk_(mk_token("N01"), mk_token("N03")) |-> 165,
+		mk_(mk_token("N03"), mk_token("N01")) |-> 165
+	};
+
+operations
+-- TODO Define operations here
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end ‘ŠŒÝ”­’…

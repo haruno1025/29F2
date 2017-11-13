@@ -5,7 +5,6 @@
 class 駅
 
 instance variables
-	-- instance variablesには頭にiをつける
 	public i駅ナンバリング : token;
 	public iＩＣカード乗車券取扱規則 : ＩＣカード乗車券取扱規則;
 	public iＩＣカード乗車券を処理する機器 : ＩＣカード乗車券を処理する機器;
@@ -14,8 +13,6 @@ instance variables
 	
 
 operations
-	-- 引数には頭にaをつける
-
 	public 駅 : token ==> 駅
 	駅(a駅ナンバリング) == (
 		iＩＣカード乗車券取扱規則 := new ＩＣカード乗車券取扱規則();
@@ -36,7 +33,7 @@ operations
 	public get精算機等 : () ==> 精算機等
 	get精算機等() == return i精算機等;
 
-	public ＩＣカード乗車券を販売する : () ==> ＩＣカード乗車券
-	ＩＣカード乗車券を販売する() == return 	iＩＣカード乗車券取扱規則.ＩＣＳＦカードを発売する()
+	public ＩＣカード乗車券を販売する : nat ==> ＩＣカード乗車券
+	ＩＣカード乗車券を販売する(a年齢) == return 	iＩＣカード乗車券取扱規則.ＩＣＳＦカードを発売する(a年齢)
 	
 end 駅

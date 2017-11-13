@@ -1,6 +1,7 @@
 class —·‹q‰c‹Æ‹K’è
 types
-	public “–Ğü = set of token
+	public “–Ğü = set of token;
+	public ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª = <‘ål> | <¬™> | <—c™> | <“û™> 
 
 values
 
@@ -20,6 +21,30 @@ public “–Ğü : set of token = “ú”ä’Jü
                               union •›“sSü;
 */
 operations
+/*
+‘æ‚S‚Uğ —·‹q‰^’ÀE—¿‹à‚ÍAŸ‚ÉŒf‚°‚é”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª‚É‚æ‚Á‚ÄA‚±‚Ì‹K’ö‚É’è‚ß‚é‚Æ‚±‚ë‚É‚æ‚èA‚»‚Ì—·‹q‰^’ÀE
+—¿‹à‚ğûó‚·‚éB
+ ‘ål ‚P‚QÎˆÈã‚ÌÒ
+ ¬™ ‚UÎˆÈã‚P‚QÎ–¢–‚ÌÒ
+ —c™ ‚PÎˆÈã‚UÎ–¢–‚ÌÒ
+ “û™ ‚PÎ–¢–‚ÌÒ
+*/
+public pure get”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª : nat ==> ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª
+get”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª(a”N—î) == 
+	 (dcl l”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª : ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª;
+	 	if a”N—î >= 12 then
+	    l”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª := <‘ål>
+	  else if 6 <= a”N—î and a”N—î < 12 then 
+	    l”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª := <¬™>
+	  else if 1 <= a”N—î and a”N—î < 6 then 
+	    l”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª := <—c™>
+	  else if a”N—î < 1 then 
+	    l”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª := <“û™>;
+
+		return l”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª;
+	)
+pre
+	a”N—î > 0
 
 functions
 

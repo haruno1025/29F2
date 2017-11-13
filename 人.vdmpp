@@ -3,20 +3,24 @@ class 人
 
 instance variables
 protected iマイナンバー : token;
+protected i年齢 : nat;
 protected iＩＣカード乗車券 : ＩＣカード乗車券;
 
 operations
-public 人 : token ==> 人
-人(aマイナンバー) ==
+public 人 : token * nat ==> 人
+人(aマイナンバー, a年齢) ==
   atomic(
     iマイナンバー := aマイナンバー;
+    i年齢 := a年齢;
   );
 
 public ICカードを購入する : 駅 ==> ()
 ICカードを購入する(a駅) ==
   atomic(
-    iＩＣカード乗車券 := a駅.ＩＣカード乗車券を販売する();
-  );
+    iＩＣカード乗車券 := a駅.ＩＣカード乗車券を販売する(i年齢);
+  )
+pre
+	i年齢 >= 6;
 
 public 駅へ入場する : 駅 ==> ()
 駅へ入場する(a駅) == a駅.get改札機等().入場する(iＩＣカード乗車券);

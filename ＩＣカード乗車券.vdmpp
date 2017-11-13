@@ -1,22 +1,23 @@
 class ‚h‚bƒJ[ƒhæÔŒ”
 types
--- TODO Define types here
+	public ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª = <‘ål> | <¬™> | <—c™> | <“û™>
+
 values
--- TODO Define values here
+
 instance variables
--- TODO Define instance variables here
 	protected iæÔ‰w : token;
 	protected i~Ô‰w : token;
 	protected iSF : nat;
+	protected i”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª : ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª;
 	
 operations
--- TODO Define operations here
-	public ‚h‚bƒJ[ƒhæÔŒ” : () ==> ‚h‚bƒJ[ƒhæÔŒ”
-	‚h‚bƒJ[ƒhæÔŒ”() ==
+	public ‚h‚bƒJ[ƒhæÔŒ” : nat ==> ‚h‚bƒJ[ƒhæÔŒ”
+	‚h‚bƒJ[ƒhæÔŒ”(a”N—î) ==
 		atomic (
 			iæÔ‰w := mk_token("NULL"); 
 			i~Ô‰w := mk_token("NULL");
-			iSF := 0
+			iSF := 0;
+			i”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª := ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª‚Ì”»’è(a”N—î)
 		);
 	
 	public setæÔ‰w : token ==> ()
@@ -31,12 +32,36 @@ operations
 	public pure get~Ô‰w : () ==> token
 	get~Ô‰w() == return i~Ô‰w;
 
-	--todo
-	--  add del‚É•ÏX‚·‚é
-	public setSF : nat1 ==> ()
-	setSF(a“ü‹àŠz) == iSF := a“ü‹àŠz;
+	public addSF : nat1 ==> ()
+	addSF(a“ü‹àŠz) == iSF := getSF() + a“ü‹àŠz;
 	
+	public delSF : nat1 ==> ()
+	delSF(aŒ¸ZŠz) == iSF := getSF() - aŒ¸ZŠz
+	pre aŒ¸ZŠz <= getSF();
+
 	public pure getSF : () ==> nat
 	getSF() == return iSF;
+
+	public set”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª : ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª ==> ()
+	set”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª(a”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª) == 
+		i”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª := a”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª;
+	
+	public pure get”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª : () ==> ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª
+	get”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª() == return i”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª
+
+functions
+	public static ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª‚Ì”»’è : nat -> ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª	
+	”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª‚Ì”»’è(a”N—î) == 
+		if a”N—î >= 12 then
+			<‘ål>
+		else if 6 <= a”N—î and a”N—î < 12 then 
+			<¬™>
+		else if 1 <= a”N—î and a”N—î < 6 then 
+		  <—c™>
+		else
+		  <“û™>
+	pre
+		a”N—î > 0
+	;	
 
 end ‚h‚bƒJ[ƒhæÔŒ”

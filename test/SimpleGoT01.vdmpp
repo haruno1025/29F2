@@ -3,7 +3,7 @@ class SimpleGoT01 is subclass of TestCase
 instance variables
 i東京メトロ : 東京メトロ := new 東京メトロ();
 i駅 : 駅 := new 駅(mk_token("Z04"));
-i人 : 人 := new 人(mk_token("HARUO"));
+i人 : 人 := new 人(mk_token("HARUO"), 10);
 
 operations 
 public SimpleGoT01 : () ==> SimpleGoT01

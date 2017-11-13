@@ -1,6 +1,6 @@
 class —·‹q‰c‹Æ‹K’è
 types
-	public “–Ğü = set of token;
+--	public “–Ğü = set of token;
 	public ”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª = <‘ål> | <¬™> | <—c™> | <“û™> 
 
 values
@@ -20,6 +20,8 @@ public “–Ğü : set of token = “ú”ä’Jü
                               union ”¼‘ –åü
                               union •›“sSü;
 */
+	public i“–Ğü : set of token;
+
 operations
 /*
 ‘æ‚S‚Uğ —·‹q‰^’ÀE—¿‹à‚ÍAŸ‚ÉŒf‚°‚é”N—î•Ê‚Ì—·‹q‚Ì‹æ•ª‚É‚æ‚Á‚ÄA‚±‚Ì‹K’ö‚É’è‚ß‚é‚Æ‚±‚ë‚É‚æ‚èA‚»‚Ì—·‹q‰^’ÀE

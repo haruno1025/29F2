@@ -1,40 +1,45 @@
-class ‚h‚bƒJ[ƒhæŽÔŒ”
+class ‚h‚bƒJ[ƒhæŽÔŒ” is subclass of ’è‹`
 types
 -- TODO Define types here
 values
 -- TODO Define values here
 instance variables
 -- TODO Define instance variables here
-	protected iæŽÔ‰w : token;
-	protected i~ŽÔ‰w : token;
+	protected iæŽÔ‰w : t‰w–¼;
+	protected i~ŽÔ‰w : t‰w–¼;
 	protected iSF : nat;
 	
 operations
 -- TODO Define operations here
 	public ‚h‚bƒJ[ƒhæŽÔŒ” : () ==> ‚h‚bƒJ[ƒhæŽÔŒ”
-	‚h‚bƒJ[ƒhæŽÔŒ”() ==
-		atomic (
-			iæŽÔ‰w := mk_token("NULL"); 
-			i~ŽÔ‰w := mk_token("NULL");
-			iSF := 0
-		);
+	‚h‚bƒJ[ƒhæŽÔŒ”() == (
+	  iSF := 0;
+	);
 	
-	public setæŽÔ‰w : token ==> ()
-	setæŽÔ‰w(a‰wƒiƒ“ƒoƒŠƒ“ƒO)@== iæŽÔ‰w := a‰wƒiƒ“ƒoƒŠƒ“ƒO;
+	public setæŽÔ‰w : t‰w–¼ ==> ()
+	setæŽÔ‰w(a‰w–¼)@== iæŽÔ‰w := a‰w–¼;
 
-	public set~ŽÔ‰w : token ==> ()
-	set~ŽÔ‰w(a‰wƒiƒ“ƒoƒŠƒ“ƒO)@== i~ŽÔ‰w := a‰wƒiƒ“ƒoƒŠƒ“ƒO;
+	public set~ŽÔ‰w : t‰w–¼ ==> ()
+	set~ŽÔ‰w(a‰w–¼)@== i~ŽÔ‰w := a‰w–¼;
 
-	public pure getæŽÔ‰w : () ==> token
+	public pure getæŽÔ‰w : () ==> t‰w–¼
 	getæŽÔ‰w() == return iæŽÔ‰w;
 
-	public pure get~ŽÔ‰w : () ==> token
+	public pure get~ŽÔ‰w : () ==> t‰w–¼
 	get~ŽÔ‰w() == return i~ŽÔ‰w;
 
+/*
 	--todo
 	--  add del‚É•ÏX‚·‚é
 	public setSF : nat1 ==> ()
 	setSF(a“ü‹àŠz) == iSF := a“ü‹àŠz;
+*/
+	
+	public addSF : nat1 ==> ()
+	addSF(a“ü‹àŠz) == iSF := iSF + a“ü‹àŠz;
+	
+	public delSF : nat1 ==> ()
+	delSF(aˆø—ŽŠz) == iSF := iSF - aˆø—ŽŠz;
 	
 	public pure getSF : () ==> nat
 	getSF() == return iSF;

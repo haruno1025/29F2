@@ -1,4 +1,5 @@
 class 定義
+
 types
 public t駅名 = token;
 public t駅ナンバリング = token;

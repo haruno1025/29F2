@@ -1,16 +1,17 @@
-class SimpleGoT01 is subclass of TestCase
+class SimpleGoT02 is subclass of TestCase, 定義
 
 instance variables
 --i第１編（総則） : 第１編（総則） := new 第１編（総則）();
 i東京メトロ : 東京メトロ := new 東京メトロ();
 i人 : 人 := new 人(mk_token("HARUO"));
 
-operations 
-public SimpleGoT01 : () ==> SimpleGoT01
-SimpleGoT01() == TestCase("SimpleGoT01");
 
-public SimpleGoT01 : seq of char ==> SimpleGoT01
-SimpleGoT01(str) == TestCase(str);
+operations 
+public SimpleGoT02 : () ==> SimpleGoT02
+SimpleGoT02() == TestCase("SimpleGoT02");
+
+public SimpleGoT02 : seq of char ==> SimpleGoT02
+SimpleGoT02(str) == TestCase(str);
 
 public setUp : () ==> ()
 setUp() == (
@@ -20,16 +21,16 @@ setUp() == (
 public runTest : () ==> ()
 runTest() == 
   (
-    dcl io : IO, fare : nat1;
+    dcl io : IO;
     io := new IO();
     io.println(i人);
     i人.ICカードを購入する(i東京メトロ);
     io.println(i人);
     i人.チャージする(1000);
     io.println(i人);
-    i人.駅へ入場する(i東京メトロ.get駅(mk_token("Z01")));
+    i人.駅へ入場する(i東京メトロ.get駅(v渋谷));
     io.println(i人);
-    i人.駅から退場する(i東京メトロ.get駅(mk_token("Z02")));
+    i人.駅から退場する(i東京メトロ.get駅(v表参道));
     io.println(i人.getＩＣカード乗車券());
 
 --   fare := i第１編第６条（運賃）.get運賃(mk_token("N01"),mk_token("N02"));
@@ -41,4 +42,4 @@ tearDown() ==
   skip;
 
 
-end SimpleGoT01
+end SimpleGoT02

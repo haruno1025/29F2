@@ -1,27 +1,27 @@
-class 精算機等　is subclass of ＩＣカード乗車券を処理する機器
+class 精算機等　is subclass of　定義
 types
 -- TODO Define types here
 values
 -- TODO Define values here
 instance variables
-	i駅ナンバリング: token
+	i駅名: t駅名;
 
 operations
 -- TODO Define operations here
-	public 精算機等 : token ==> 精算機等
-	精算機等(a駅ナンバリング) == i駅ナンバリング := a駅ナンバリング;
+	public 精算機等 : t駅名 ==> 精算機等
+	精算機等(a駅名) == i駅名 := a駅名;
 
 	public 不足額をチャージする : ＩＣカード乗車券 * nat1 ==> ＩＣカード乗車券
 	不足額をチャージする(aＩＣカード乗車券, a入金額) == (
-		  aＩＣカード乗車券.setSF(aＩＣカード乗車券.getSF() + a入金額);
+		aＩＣカード乗車券.addSF(a入金額);
 		return aＩＣカード乗車券
 	)
 	pre
-		不足額(aＩＣカード乗車券, mk_token("M01")) > 0	
-  and a入金額 = 端数を１０円単位に切り上げ(不足額(aＩＣカード乗車券, mk_token("M01")))
+		不足額(aＩＣカード乗車券, i駅名) > 0	
+  and a入金額 = 端数を１０円単位に切り上げ(不足額(aＩＣカード乗車券, i駅名))
 	;
 	
-	public pure 不足額 : ＩＣカード乗車券 * token ==> int
+	public pure 不足額 : ＩＣカード乗車券 * t駅名 ==> int
 	不足額(aＩＣカード乗車券, a降車駅) == (
 		dcl l運賃 : 第１編（総則） := new 第１編（総則）() ;
 	  return (aＩＣカード乗車券.getSF() - l運賃.get運賃_第６条４項(aＩＣカード乗車券.get乗車駅(), a降車駅)) * (-1)

@@ -140,19 +140,19 @@ instance variables
 	 *        (N01, N03) |-> 165  -- –Ú• ¨ ”’‹à‚—Ö
 	 *        (N03, N01) |-> 165  -- ”’‹à‚—Ö ¨ –Ú•
 	 */
-	protected ‘ŠŒİ”­’…Ê‘œ@: map (token * token ) to nat1 := {|->};
+	protected ‘ŠŒİ”­’…Ê‘œ@: map (t‰w–¼ * t‰w–¼) to nat1 := {|->};
 
 	/*
 	 * æÔ‰w‚©‚ç~Ô‰wŠÔ‚Ì‹——£‚Ö‚ÌÊ‘œ
 	 *   (æÔ‰w, ~Ô‰w) |-> ‹——£iKmj
 	 */
-	protected ƒLƒ’öÊ‘œ@: map (token * token ) to set of real := {|->};
+	protected ƒLƒ’öÊ‘œ@: map (t‰w–¼ * t‰w–¼) to set of real := {|->};
 	
 	/*
 	 * æÔ‰w‚©‚ç~Ô‰wŠÔ‚Ì‘ål•Ğ“¹•’Ê—·‹q‰^’À‚Ö‚ÌÊ‘œ
 	 *   (æÔ‰w, ~Ô‰w) |-> ‘ål•Ğ“¹•’Ê—·‹q‰^’Ài‰~j
 	 */
-	protected •’Ê—·‹q‰^’ÀÊ‘œ@: map (token * token ) to nat1 := {
+	protected •’Ê—·‹q‰^’ÀÊ‘œ@: map (t‰w–¼ * t‰w–¼) to nat1 := {
 					mk_(mk_token("Z01"),mk_token("Z02")) |-> 165,
 					mk_(mk_token("Z01"),mk_token("Z03")) |-> 165,
 					mk_(mk_token("Z01"),mk_token("Z04")) |-> 165,
@@ -431,7 +431,7 @@ operations
 	 *@[‹K’è]
 	 * ‚S@‘æ‚Q€‚É‚æ‚é‘ål•Ğ“¹•’Ê—·‹q‰^’À‚ÍA•Ê•\‘æ‚R‚Ì‚Æ‚¨‚è‚Æ‚·‚éB
 	**********************************************************************/
- 	public pure get‰^’À_‘æ‚Uğ‚S€ : token * token ==> nat1
+ 	public pure get‰^’À_‘æ‚Uğ‚S€ : t‰wƒiƒ“ƒoƒŠƒ“ƒO * t‰wƒiƒ“ƒoƒŠƒ“ƒO ==> nat1
 	get‰^’À_‘æ‚Uğ‚S€(aæÔ‰w, a~Ô‰w) == return •’Ê—·‹q‰^’ÀÊ‘œ(mk_(aæÔ‰w, a~Ô‰w))
 	pre
 		aæÔ‰w <> a~Ô‰w and
@@ -491,10 +491,20 @@ operations
    *    “–Ğü@‹âÀüAŠÛƒm“àüA“ú”ä’JüA“Œ¼üAç‘ã“cüA—LŠy’¬üA”¼‘ –åü
    *          “ì–kü‹y‚Ñ•›“sSü‚ğ‚¢‚¤B
 	**********************************************************************/
-  public pure “–Ğü‰w‚Å‚ ‚é : token ==> bool
+  public pure “–Ğü‰w‚Å‚ ‚é : t‰wƒiƒ“ƒoƒŠƒ“ƒO ==> bool
 	“–Ğü‰w‚Å‚ ‚é(a‰wƒiƒ“ƒoƒŠƒ“ƒO) ==
-  	if a‰wƒiƒ“ƒoƒŠƒ“ƒO in set “–Ğü then return true else return false;
+  	if a‰wƒiƒ“ƒoƒŠƒ“ƒO in set v“–Ğü then return true else return false;
 
+  /*********************************************************************
+   *
+   *
+   *
+   *********************************************************************/
+   public ÅˆÀ‰^’À‚ğæ“¾‚·‚é : t‰w–¼ * t‰w–¼ ==> nat1
+   ÅˆÀ‰^’À‚ğæ“¾‚·‚é(aæÔ‰w–¼, a~Ô‰w–¼) == (
+   return 1
+   );
+--    
 functions
 
 	-- ƒLƒ’ö‚ÌW‡‚©‚çAÅ’Z‚Æ‚È‚éƒLƒ’ö‚ğæ“¾‚·‚é
@@ -520,7 +530,6 @@ functions
   	aƒLƒ’ö >= 0
 	;
 
---    
 traces
 -- TODO Define Combinatorial Test Traces here
 

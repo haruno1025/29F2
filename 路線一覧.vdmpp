@@ -1,0 +1,219 @@
+class 路線一覧 is subclass of 定義
+values
+v路線名駅ナンバリング写像 : map t路線名 to set of t駅ナンバリング = {
+v千代田線 |-> {
+ vC01
+,vC02
+,vC03
+,vC04
+,vC05
+,vC06
+,vC07
+,vC08
+,vC09
+,vC10
+,vC11
+,vC12
+,vC13
+,vC14
+,vC15
+,vC16
+,vC17
+,vC18
+,vC19
+,vC20
+}} munion {
+v副都心線 |-> {
+ vF01
+,vF02
+,vF03
+,vF04
+,vF05
+,vF06
+,vF07
+,vF08
+,vF09
+,vF10
+,vF11
+,vF12
+,vF13
+,vF14
+,vF15
+,vF16
+}} munion {
+v銀座線 |-> {
+ vG01
+,vG02
+,vG03
+,vG04
+,vG05
+,vG06
+,vG07
+,vG08
+,vG09
+,vG10
+,vG11
+,vG12
+,vG13
+,vG14
+,vG15
+,vG16
+,vG17
+,vG18
+,vG19
+}} munion {
+v日比谷線 |-> {
+ vH01
+,vH02
+,vH03
+,vH04
+,vH05
+,vH06
+,vH07
+,vH08
+,vH09
+,vH10
+,vH11
+,vH12
+,vH13
+,vH14
+,vH15
+,vH16
+,vH17
+,vH18
+,vH19
+,vH20
+,vH21
+}} munion {
+v丸の内線 |-> {
+ vM01
+,vM02
+,vM03
+,vM04
+,vM05
+,vM06
+,vM07
+,vM08
+,vM09
+,vM10
+,vM11
+,vM12
+,vM13
+,vM14
+,vM15
+,vM16
+,vM17
+,vM18
+,vM19
+,vM20
+,vM21
+,vM22
+,vM23
+,vM24
+,vM25
+,vMb03
+,vMb04
+,vMb05
+}} munion {
+v南北線 |-> {
+ vN01
+,vN02
+,vN03
+,vN04
+,vN05
+,vN06
+,vN07
+,vN08
+,vN09
+,vN10
+,vN11
+,vN12
+,vN13
+,vN14
+,vN15
+,vN16
+,vN17
+,vN18
+,vN19
+}} munion {
+v東西線 |-> {
+ vT01
+,vT02
+,vT03
+,vT04
+,vT05
+,vT06
+,vT07
+,vT08
+,vT09
+,vT10
+,vT11
+,vT12
+,vT13
+,vT14
+,vT15
+,vT16
+,vT17
+,vT18
+,vT19
+,vT20
+,vT21
+,vT22
+,vT23
+}} munion {
+v有楽町線 |-> {
+ vY01
+,vY02
+,vY03
+,vY04
+,vY05
+,vY06
+,vY07
+,vY08
+,vY09
+,vY10
+,vY11
+,vY12
+,vY13
+,vY14
+,vY15
+,vY16
+,vY17
+,vY18
+,vY19
+,vY20
+,vY21
+,vY22
+,vY23
+,vY24
+}} munion {
+v半蔵門線 |-> {
+ vZ01
+,vZ02
+,vZ03
+,vZ04
+,vZ05
+,vZ06
+,vZ07
+,vZ08
+,vZ09
+,vZ10
+,vZ11
+,vZ12
+,vZ13
+,vZ14
+}}
+;
+instance variables
+
+operations
+public pure get路線名駅ナンバリング写像 : () ==> map t路線名 to set of t駅ナンバリング
+get路線名駅ナンバリング写像() == return v路線名駅ナンバリング写像;
+
+public pure get路線名一覧 : () ==> set of t路線名
+get路線名一覧() == return dom v路線名駅ナンバリング写像;
+
+public pure get駅ナンバリング : (t路線名) ==> set of t駅ナンバリング
+get駅ナンバリング(a路線名) == return v路線名駅ナンバリング写像(a路線名);
+
+end 路線一覧

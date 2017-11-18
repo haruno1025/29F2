@@ -19,8 +19,9 @@ protected i第１編（総則） : 第１編（総則）
 operations
 public 東京メトロ : () ==> 東京メトロ
 東京メトロ() == (
-  for all a in set dom(v駅名駅ナンバリング写像) do
-    i駅写像 := i駅写像 munion {a |-> new 駅(a, v駅名駅ナンバリング写像(a))};
+　　dcl d駅一覧 : 駅一覧 := new 駅一覧();
+  for all a in set d駅一覧.get駅名一覧() do
+    i駅写像 := i駅写像 munion {a |-> new 駅(a, d駅一覧.get駅ナンバリング(a))};
 );
 
 public ICカード乗車券を発行する : () ==> ＩＣカード乗車券

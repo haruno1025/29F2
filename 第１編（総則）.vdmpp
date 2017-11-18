@@ -493,7 +493,10 @@ operations
 	**********************************************************************/
   public pure 当社線駅である : t駅ナンバリング ==> bool
 	当社線駅である(a駅ナンバリング) ==
-  	if a駅ナンバリング in set v当社線 then return true else return false;
+  	if a駅ナンバリング in set dunion rng(new 路線一覧().get路線名駅ナンバリング写像()) then
+  	  return true
+    else
+      return false;
 
   /*********************************************************************
    *
